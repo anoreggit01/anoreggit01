@@ -27,6 +27,7 @@ RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao
 RUN rm /etc/apache2/sites-enabled/*
 COPY $CODEBUILD_SRC_DIR_config/anoregsp.org.br.conf /etc/apache2/sites-available/
 COPY $CODEBUILD_SRC_DIR_config/apache2.conf /etc/apache2/
+RUN cd $CODEBUILD_SRC_DIR && ls -la
 COPY $CODEBUILD_SRC_DIR/aplicacao /var/www/anoregsp/aplicacao/
 COPY $CODEBUILD_SRC_DIR_config/.webconfig /var/www/anoregsp/
 COPY $CODEBUILD_SRC_DIR_config/start.sh /opt/
