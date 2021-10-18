@@ -26,6 +26,9 @@ RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/
 
 RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao 
 COPY ./aplicacao /var/www/anoregsp/aplicacao
+RUN cd /var/www/anoregsp/aplicacao && ls -la
+RUN cd /var/www/anoregsp/ && ls -la
+RUN sssadaw
 RUN rm /etc/apache2/sites-enabled/*
 COPY ./anoregsp.org.br.conf /etc/apache2/sites-available/
 COPY ./apache2.conf /etc/apache2/
