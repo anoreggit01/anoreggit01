@@ -1,7 +1,5 @@
 FROM debian:jessie
 MAINTAINER Anderson Gavetti <anderson.gavetti@h2info.com.br>
-RUN mkdir /var/www && mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao 
-COPY ./aplicacao /var/www/anoregsp/aplicacao
 
 RUN apt-get update
 RUN apt-get -y install libdb-dev build-essential apache2-dev libjpeg-dev libmysqlclient-dev libsnmp-dev libtidy-dev libxpm-dev libfreetype6-dev libpng-dev ca-certificates apt-transport-https curl gnupg lsb-release wget apache2 bzip2 gcc libxml2-dev libz-dev libbz2-dev libcurl4-openssl-dev libmcrypt-dev libpq-dev libxslt-dev vim build-essential
@@ -32,6 +30,8 @@ COPY ./anoregsp.org.br.conf /etc/apache2/sites-available/
 COPY ./apache2.conf /etc/apache2/
 COPY ./.webconfig /var/www/anoregsp/
 COPY ./start.sh /opt/
+RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao 
+COPY ./aplicacao /var/www/anoregsp/aplicacao
 RUN chmod +x /opt/start.sh
 RUN chown -R www-data:www-data /var/www/anoregsp
 RUN find /var/www/anoregsp -type d -exec chmod 755 {} \;
