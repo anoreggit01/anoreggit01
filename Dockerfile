@@ -1,6 +1,6 @@
 FROM debian:jessie
 MAINTAINER Anderson Gavetti <anderson.gavetti@h2info.com.br>
-RUN mkdir /var/www && mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao && cp -R $CODEBUILD_SRC_DIR/aplicacao /var/www/anoregsp/aplicacao
+RUN mkdir /var/www && mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao && cd /codebuild/output/src150/src/github.com/anoreggit01/anoreg-homolog && cp -R aplicacao /var/www/anoregsp/aplicacao
 
 RUN apt-get update
 RUN apt-get -y install libdb-dev build-essential apache2-dev libjpeg-dev libmysqlclient-dev libsnmp-dev libtidy-dev libxpm-dev libfreetype6-dev libpng-dev ca-certificates apt-transport-https curl gnupg lsb-release wget apache2 bzip2 gcc libxml2-dev libz-dev libbz2-dev libcurl4-openssl-dev libmcrypt-dev libpq-dev libxslt-dev vim build-essential
