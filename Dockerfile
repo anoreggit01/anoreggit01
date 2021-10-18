@@ -1,12 +1,10 @@
 FROM debian:jessie
 MAINTAINER Anderson Gavetti <anderson.gavetti@h2info.com.br>
-RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao
-COPY $CODEBUILD_SRC_DIR/aplicacao /var/www/anoregsp/aplicacao/
-
 RUN apt-get update
 RUN apt-get -y install libdb-dev build-essential apache2-dev libjpeg-dev libmysqlclient-dev libsnmp-dev libtidy-dev libxpm-dev libfreetype6-dev libpng-dev ca-certificates apt-transport-https curl gnupg lsb-release wget apache2 bzip2 gcc libxml2-dev libz-dev libbz2-dev libcurl4-openssl-dev libmcrypt-dev libpq-dev libxslt-dev vim build-essential
 RUN cd /opt && wget https://www.php.net/distributions/php-5.6.37.tar.gz && tar -zxvf php-5.6.37.tar.gz && cd php-5.6.37 && ./configure --enable-dba=shared -with-apxs2=/usr/bin/apxs2 -with-mysql=/usr -with-mysqli=/usr/bin/mysql_config -with-pgsql=/usr -with-tidy=/usr -with-curl=/usr/bin -with-curlwrappers -with-openssl-dir=/usr -with-zlib-dir=/usr -enable-mbstring -with-xpm-dir=/usr -with-pdo-pgsql=/usr -with-pdo-mysql=/usr -with-xsl=/usr -with-xmlrpc -with-iconv-dir=/usr -with-snmp=/usr -enable-exif -enable-calendar -with-bz2=/usr -with-mcrypt=/usr -with-gd -with-jpeg-dir=/usr -with-png-dir=/usr -with-zlib-dir=/usr -with-freetype-dir=/usr -enable-mbstring -enable-zip -with-pear --with-config-file-path=/usr/local/lib --enable-sockets && make && make -i install
-
+RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao
+COPY $CODEBUILD_SRC_DIR/aplicacao /var/www/anoregsp/aplicacao/
 RUN rm /etc/apache2/mods-enabled/mpm_event.load && rm /etc/apache2/mods-enabled/mpm_event.conf
 RUN ln -s /usr/lib/$ARCH-linux-gnu/libXpm.so.4 /usr/lib/libXpm.so
 RUN ln -s /usr/lib/$ARCH-linux-gnu/libXpm.so.4 /usr/lib/libXpm.so.4
