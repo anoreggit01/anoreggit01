@@ -1,6 +1,6 @@
 FROM debian:jessie
 MAINTAINER Anderson Gavetti <anderson.gavetti@h2info.com.br>
-
+RUN ls -la
 RUN mkdir /var/www && mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao
 COPY aplicacao /var/www/anoregsp/aplicacao/
 
