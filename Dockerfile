@@ -28,11 +28,10 @@ RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/
 
 
 RUN rm /etc/apache2/sites-enabled/*
-COPY $CODEBUILD_SRC_DIR_config/anoregsp.org.br.conf /etc/apache2/sites-available/
-COPY $CODEBUILD_SRC_DIR_config/apache2.conf /etc/apache2/
-
-COPY $CODEBUILD_SRC_DIR_config/.webconfig /var/www/anoregsp/
-COPY $CODEBUILD_SRC_DIR_config/start.sh /opt/
+COPY ./anoregsp.org.br.conf /etc/apache2/sites-available/
+COPY ./apache2.conf /etc/apache2/
+COPY ./.webconfig /var/www/anoregsp/
+COPY ./start.sh /opt/
 RUN chmod +x /opt/start.sh
 RUN chown -R www-data:www-data /var/www/anoregsp
 RUN find /var/www/anoregsp -type d -exec chmod 755 {} \;
