@@ -7,5 +7,5 @@ export LANG=pt_BR.UTF-8
 #sed -i "s/db_name\ =/db_name\ =\ $dbName/g" "/var/www/anoregsp/.webconfig"
 
 # Start apache
-/etc/init.d/apache2 start
+#/etc/init.d/apache2 start
 tail -f /etc/passwd
