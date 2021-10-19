@@ -25,11 +25,11 @@ RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/
 
 RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao
 RUN rm /etc/apache2/sites-enabled/*
-COPY anoregsp.org.br.conf /etc/apache2/sites-available/
-COPY apache2.conf /etc/apache2/
-COPY aplicacao /var/www/anoregsp/aplicacao/
-COPY .webconfig /var/www/anoregsp/
-COPY start.sh /opt/
+COPY ./anoregsp.org.br.conf /etc/apache2/sites-available/
+COPY ./apache2.conf /etc/apache2/
+COPY ./aplicacao /var/www/anoregsp/aplicacao/
+COPY ./.webconfig /var/www/anoregsp/
+COPY ./start.sh /opt/
 RUN chmod +x /opt/start.sh
 RUN chown -R www-data:www-data /var/www/anoregsp
 RUN find /var/www/anoregsp -type d -exec chmod 755 {} \;
