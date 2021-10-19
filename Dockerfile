@@ -37,6 +37,8 @@ RUN find /var/www/anoregsp -type f -exec chmod 644 {} \;
 RUN a2ensite anoregsp.org.br.conf
 RUN a2enmod rewrite
 RUN a2enmod mpm_prefork
+RUN ls -la /var/www/anoregsp/
+RUN ls -la /var/www/anoregsp/aplicacao/
 
 ENV APACHE_RUN_USER=www-data
 ENV APACHE_RUN_GROUP=www-data
