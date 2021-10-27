@@ -30,7 +30,6 @@ COPY ./apache2.conf /etc/apache2/
 COPY ./.webconfig /var/www/anoregsp/
 COPY ./start.sh /opt/
 COPY ./aplicacao /var/www/anoregsp/aplicacao/
-RUN rm -r /var/www/anoregsp/aplicacao/config
 RUN chmod +x /opt/start.sh
 RUN chown -R www-data:www-data /var/www/anoregsp
 RUN find /var/www/anoregsp -type d -exec chmod 755 {} \;
