@@ -23,7 +23,7 @@ RUN sed -i "s/;date.timezone\ =/date.timezone\ =\ America\/Sao_Paulo/g" "/usr/lo
 RUN sed -i "s/short_open_tag\ =\ Off/short_open_tag\ =\ On/g" "/usr/local/lib/php.ini"
 RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/usr/local/lib/php.ini"
 
-RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao
+RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao && mkdir /var/www/anoregsp/tmp && chmod 777 /var/www/anoregsp/tmp
 RUN rm /etc/apache2/sites-enabled/*
 COPY anoregsp.org.br.conf /etc/apache2/sites-available/
 COPY apache2.conf /etc/apache2/
