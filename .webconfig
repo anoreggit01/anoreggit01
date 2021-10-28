@@ -14,7 +14,7 @@ db_name =
 smtp_host = ""
 smtp_user = ""
 smtp_password = ""
-smtp_porta	  = ""
+smtp_porta = ""
 
 mail_autenticado = ""
 mail_autenticado_password = ""
