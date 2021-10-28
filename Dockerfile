@@ -22,6 +22,7 @@ RUN sed -i "s/upload_max_filesize\ =\ 2/upload_max_filesize\ =\ 150/g" "/usr/loc
 RUN sed -i "s/;date.timezone\ =/date.timezone\ =\ America\/Sao_Paulo/g" "/usr/local/lib/php.ini"
 RUN sed -i "s/short_open_tag\ =\ Off/short_open_tag\ =\ On/g" "/usr/local/lib/php.ini"
 RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/usr/local/lib/php.ini"
+RUN sed -i 's/error_reporting\ =\ "E_ALL"/default_charset\ =\ "E_ERROR"/g' "/usr/local/lib/php.ini"
 
 RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao && mkdir /var/www/anoregsp/aplicacao/tmp && chmod 777 /var/www/anoregsp/aplicacao/tmp
 RUN rm /etc/apache2/sites-enabled/*
