@@ -24,6 +24,7 @@ RUN sed -i "s/short_open_tag\ =\ Off/short_open_tag\ =\ On/g" "/usr/local/lib/ph
 RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/usr/local/lib/php.ini"
 RUN sed -i "s/error_reporting\ =\ E_ALL/error_reporting\ =\ 0/g" "/usr/local/lib/php.ini"
 RUN sed -i "s/display_errors\ =\ On/display_errors\ =\ Off/g" "/usr/local/lib/php.ini"
+RUN sed -i 's/;session.save_path\ =\ "\/tmp"/session.save_path\ =\ "\/tmp"/g' "/usr/local/lib/php.ini"
 
 RUN mkdir /var/www/anoregsp/ && mkdir /var/www/anoregsp/aplicacao && mkdir /var/www/anoregsp/aplicacao/tmp && chmod 777 /var/www/anoregsp/aplicacao/tmp
 RUN rm /etc/apache2/sites-enabled/*
