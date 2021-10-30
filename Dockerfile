@@ -33,7 +33,8 @@ COPY apache2.conf /etc/apache2/
 COPY .webconfig /var/www/anoregsp/
 COPY start.sh /opt/
 RUN chmod +x /opt/start.sh
-COPY ./aplicacao /var/www/anoregsp/aplicacao/ && chown -R www-data:www-data /var/www/anoregsp && find /var/www/anoregsp -type d -exec chmod 755 {} \; && find /var/www/anoregsp -type f -exec chmod 644 {} \;
+COPY ./aplicacao /var/www/anoregsp/aplicacao/ 
+RUN chown -R www-data:www-data /var/www/anoregsp && find /var/www/anoregsp -type d -exec chmod 755 {} \; && find /var/www/anoregsp -type f -exec chmod 644 {} \;
 RUN a2ensite anoregsp.org.br.conf && a2enmod rewrite && a2enmod mpm_prefork
 
 ENV APACHE_RUN_USER=www-data
