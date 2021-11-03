@@ -16,7 +16,7 @@ COPY update-ass9.sh /etc/cron.d/update-ass9.sh
 COPY update-ass10.sh /etc/cron.d/update-ass10.sh
 COPY update-ass14.sh /etc/cron.d/update-ass14.sh
 COPY update-ass15.sh /etc/cron.d/update-ass15.sh
-COPY update-ass18.sh /etc/cron.d/update-ass16.sh
+COPY update-ass18.sh /etc/cron.d/update-ass18.sh
 RUN chmod 0644 /etc/cron.d/update-ass6.sh && chmod 0644 /etc/cron.d/update-ass9.sh && chmod 0644 /etc/cron.d/update-ass10.sh && chmod 0644 /etc/cron.d/update-ass14.sh && chmod 0644 /etc/cron.d/update-ass15.sh && chmod 0644 /etc/cron.d/update-ass18.sh
 RUN crontab /etc/cron.d/update-ass6.sh && crontab /etc/cron.d/update-ass9.sh && crontab /etc/cron.d/update-ass10.sh && crontab /etc/cron.d/update-ass14.sh && crontab /etc/cron.d/update-ass15.sh && crontab /etc/cron.d/update-ass18.sh
 
