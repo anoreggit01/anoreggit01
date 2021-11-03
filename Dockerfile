@@ -23,8 +23,14 @@ RUN chown -R www-data:www-data /var/www/anoregsp && find /var/www/anoregsp -type
 RUN a2ensite anoregsp.org.br.conf && a2enmod rewrite && a2enmod mpm_prefork
 
 RUN apt-get update && apt-get install -y cron
-COPY update-ass.sh /etc/cron.d/update-ass.sh
-RUN chmod 0644 /etc/cron.d/update-ass.sh && crontab /etc/cron.d/update-ass.sh
+COPY update-ass6.sh /etc/cron.d/update-ass6.sh
+COPY update-ass9.sh /etc/cron.d/update-ass9.sh
+COPY update-ass10.sh /etc/cron.d/update-ass10.sh
+COPY update-ass14.sh /etc/cron.d/update-ass14.sh
+COPY update-ass15.sh /etc/cron.d/update-ass15.sh
+COPY update-ass16.sh /etc/cron.d/update-ass16.sh
+RUN chmod 0644 /etc/cron.d/update-ass6.sh && chmod 0644 /etc/cron.d/update-ass9.sh && chmod 0644 /etc/cron.d/update-ass10.sh && chmod 0644 /etc/cron.d/update-ass14.sh && chmod 0644 /etc/cron.d/update-ass15.sh && chmod 0644 /etc/cron.d/update-ass16.sh
+RUN crontab /etc/cron.d/update-ass6.sh && crontab /etc/cron.d/update-ass9.sh && crontab /etc/cron.d/update-ass10.sh && crontab /etc/cron.d/update-ass14.sh && crontab /etc/cron.d/update-ass15.sh && crontab /etc/cron.d/update-ass16.sh
 
 ENV APACHE_RUN_USER=www-data
 ENV APACHE_RUN_GROUP=www-data
