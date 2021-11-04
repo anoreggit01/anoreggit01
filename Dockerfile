@@ -13,6 +13,6 @@ RUN sed -i "s/upload_max_filesize\ =\ 2/upload_max_filesize\ =\ 150/g" "/usr/loc
 RUN sed -i "s/;date.timezone\ =/date.timezone\ =\ America\/Sao_Paulo/g" "/usr/local/lib/php.ini"
 RUN sed -i "s/short_open_tag\ =\ Off/short_open_tag\ =\ On/g" "/usr/local/lib/php.ini"
 RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/usr/local/lib/php.ini"
-RUN sed -i "s/error_reporting\ =\ E_ALL/error_reporting\ =\ 0/g" "/usr/local/lib/php.ini"
+RUN sed -i "s/error_reporting\ =\ E_ALL/error_reporting\ =\ E_ALL\ \&\ \~E_STRICT\ \&\ \~E_DEPRECATED/g" "/usr/local/lib/php.ini"
 RUN sed -i "s/display_errors\ =\ On/display_errors\ =\ Off/g" "/usr/local/lib/php.ini"
 RUN sed -i 's/;session.save_path\ =\ "\/tmp"/session.save_path\ =\ "\/tmp"/g' "/usr/local/lib/php.ini"
