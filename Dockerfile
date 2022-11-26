@@ -25,7 +25,7 @@ COPY update-ass18.sh /etc/cron.d/update-ass18.sh
 RUN sed -i "s/memory_limit\ =\ 8/memory_limit\ =\ 128/g" "/usr/local/lib/php.ini"
 RUN sed -i "s/post_max_size\ =\ 8/post_max_size\ =\ 150/g" "/usr/local/lib/php.ini"
 RUN sed -i "s/upload_max_filesize\ =\ 2/upload_max_filesize\ =\ 150/g" "/usr/local/lib/php.ini"
-RUN sed -i "s/;date.timezone\ =\ America\/Sao_Paulo/date.timezone\ =\ America\/Bahia/g" "/usr/local/lib/php.ini"
+RUN sed -i "s/date.timezone\ =\ America\/Sao_Paulo/date.timezone\ =\ America\/Bahia/g" "/usr/local/lib/php.ini"
 RUN sed -i "s/short_open_tag\ =\ Off/short_open_tag\ =\ On/g" "/usr/local/lib/php.ini"
 RUN sed -i 's/default_charset\ =\ "UTF-8"/default_charset\ =\ "ISO-8859-1"/g' "/usr/local/lib/php.ini"
 RUN sed -i "s/error_reporting\ =\ E_ALL/error_reporting\ =\ E_ALL\ \&\ \~E_STRICT\ \&\ \~E_DEPRECATED/g" "/usr/local/lib/php.ini"
