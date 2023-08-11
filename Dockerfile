@@ -18,7 +18,7 @@ RUN apt-get update && \
     ca-certificates apt-transport-https curl gnupg lsb-release wget \
     apache2 bzip2 gcc libxml2-dev libz-dev libbz2-dev \
     libcurl4-openssl-dev libmcrypt-dev libpq-dev libxslt-dev vim build-essential \
-    libmagickwand-6.q16-dev
+    libmagickwand-6.q16-dev imagemagick
 # Baixar e extrair o código-fonte do PHP
 RUN cd /opt && \
     wget https://www.php.net/distributions/php-5.6.37.tar.gz --no-check-certificate && \
