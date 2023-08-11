@@ -11,7 +11,7 @@ RUN echo "deb http://archive.debian.org/debian/ jessie main non-free contrib" > 
     echo "deb-src http://archive.debian.org/debian-security/ jessie/updates main non-free contrib" >> /etc/apt/sources.list
 # Atualizar os repositórios e instalar pacotes essenciais
 RUN apt-get update && \
-    apt-get -y install \
+    apt-get -y install --force-yes \
     cron openssl libgnutls28-dev curl libssl-dev libcurl4-openssl-dev pkg-config \
     libdb-dev build-essential apache2-dev libjpeg-dev libmysqlclient-dev \
     libsnmp-dev libtidy-dev libxpm-dev libfreetype6-dev libpng-dev \
