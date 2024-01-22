@@ -11,6 +11,6 @@ sed -i 's/smtp_password\ =\ ""/smtp_password\ =\ "'$smtpPassword'"/g' "/var/www/
 sed -i 's/smtp_porta\ =\ ""/smtp_porta\ =\ "'$smtpPort'"/g' "/var/www/anoregsp/.webconfig"
 sed -i 's/mail_autenticado\ =\ ""/mail_autenticado\ =\ "'$mailAut'"/g' "/var/www/anoregsp/.webconfig"
 sed -i 's/mail_autenticado_password\ =\ ""/mail_autenticado_password\ =\ "'$mailAutPass'"/g' "/var/www/anoregsp/.webconfig"
+
 # Start apache
-/etc/init.d/apache2 start
-tail -f /etc/passwd
+exec apache2-foreground
