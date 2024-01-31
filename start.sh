@@ -13,4 +13,6 @@ sed -i 's/mail_autenticado\ =\ ""/mail_autenticado\ =\ "'$mailAut'"/g' "/var/www
 sed -i 's/mail_autenticado_password\ =\ ""/mail_autenticado_password\ =\ "'$mailAutPass'"/g' "/var/www/anoregsp/.webconfig"
 
 # Start apache
-exec apache2-foreground
+#exec apache2-foreground
+/etc/init.d/apache2 start
+tail -f /etc/passwd
